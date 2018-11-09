@@ -1,5 +1,5 @@
 
- /* 为jQuery实现 $.tmpl 模板解析方法 -- 来自Qwrap
+ /* 为jQuery实现 $.tmpl 模板解析方法 -- 源自Qwrap.tmpl
  */
 (function() {
 
@@ -139,7 +139,7 @@
                     sTmpl = sTmpl.replace(ss[i][0], ss[i][1]);
                 }
                 if (N >= 0) {throw new Error("Lose end Tag: " + NStat[N].tagG); }
-                sTmpl = sTmpl.replace(/##7b/g,'{').replace(/##7d/g,'}').replace(/##23/g,'#'); //替换特殊符号{}#
+                sTmpl = sTmpl.replace(/##7b/g,'{').replace(/##7d/g,'}').replace(/##23/g,'#').replace(/##24/g,'$'); //替换特殊符号{}#
                 sTmpl = 'var ' + sArrName + '=[], '
                         + 'inc = $.tmplBySelector; ' //让模板中支持inc(selector,data)
                         + sLeft + sTmpl + '");\n'
